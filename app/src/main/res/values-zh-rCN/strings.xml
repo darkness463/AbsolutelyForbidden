@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">绝对禁锢</string>
+    <string name="dialog_no_root_title">无root权限</string>
+    <string name="dialog_no_root_content">无root权限</string>
+    <string name="dialog_loading_app">正在加载应用</string>
+    <string name="dialog_launching_app">正在处理</string>
+
+    <string name="btn_ok">确定</string>
+</resources>
