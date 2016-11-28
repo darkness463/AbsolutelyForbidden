@@ -3,6 +3,7 @@ package com.darkness463.absolutelyforbidden;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -13,6 +14,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 
+import com.darkness463.absolutelyforbidden.activity.AboutActivity;
 import com.darkness463.absolutelyforbidden.activity.BaseActivity;
 import com.darkness463.absolutelyforbidden.adapt.ViewPagerAdapter;
 import com.darkness463.absolutelyforbidden.common.asynctask.LoadAppTask;
@@ -208,6 +210,9 @@ public class MainActivity extends BaseActivity {
                 break;
             case R.id.action_all:
                 enableAll();
+                break;
+            case R.id.action_about:
+                startActivity(new Intent(this, AboutActivity.class));
                 break;
         }
         return super.onOptionsItemSelected(item);

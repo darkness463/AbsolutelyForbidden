@@ -2,9 +2,11 @@
 <resources>
     <string name="app_name">绝对禁锢</string>
     <string name="dialog_no_root_title">无root权限</string>
-    <string name="dialog_no_root_content">无root权限</string>
+    <string name="dialog_no_root_content">该应用需开启root权限才能使用。</string>
     <string name="dialog_loading_app">正在加载应用</string>
     <string name="dialog_launching_app">正在处理</string>
 
     <string name="btn_ok">确定</string>
+    <string name="text_about">这是一个免费、开源、无广告的系统工具，如有任何疑问，可与我邮件联系：darkness463@gmail.com。\n
+    </string>
 </resources>
