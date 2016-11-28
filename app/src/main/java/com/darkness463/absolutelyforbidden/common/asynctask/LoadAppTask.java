@@ -56,6 +56,11 @@ public class LoadAppTask extends AsyncTask<Void, Void, Void> {
         Collections.sort(applications, new ApplicationInfo.DisplayNameComparator(pm));
         for (ApplicationInfo info : applications) {
             try {
+                // don't add myself
+                if (info.packageName.equals(context.getPackageName())) {
+                    continue;
+                }
+
                 Bitmap icon = BitmapUtil.drawableToBitmap(info.loadIcon(pm));
                 if (icon == null) {
                     icon = BitmapFactory.decodeResource(context.getResources(), R.drawable.ic_default);
