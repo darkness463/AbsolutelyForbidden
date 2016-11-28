@@ -24,7 +24,7 @@ public class AboutActivity extends AppCompatActivity {
 
     private void initView() {
         TextView version = (TextView) findViewById(R.id.tv_version);
-        version.setText("版本：" + BuildConfig.VERSION_NAME);
+        version.setText(getString(R.string.about_version) + BuildConfig.VERSION_NAME);
     }
 
     public void viewGithub(View view) {

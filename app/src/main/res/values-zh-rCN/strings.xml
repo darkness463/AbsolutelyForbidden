@@ -9,4 +9,6 @@
     <string name="btn_ok">确定</string>
     <string name="text_about">这是一个免费、开源、无广告的系统工具，如有任何疑问，可与我邮件联系：darkness463@gmail.com。\n
     </string>
+    <string name="about_version">版本: </string>
+    <string name="view_on_github">点击访问github</string>
 </resources>
