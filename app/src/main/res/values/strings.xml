@@ -18,5 +18,10 @@
     <string name="text_app_disabled">Disabled</string>
     <string name="text_app_enabled">Enabled</string>
     <string name="text_app_not_disabled">Not disable</string>
+    <string name="text_guide_disabled_side">Disabled apps show in this side.</string>
+    <string name="text_guide_enable_side">Enabled apps show in this side. Choose apps to disable from this side!</string>
+    <string name="text_guide_notice">Notice</string>
+    <string name="text_guide_isee">I See</string>
+    <string name="text_guide_notice_content">Disabled apps will disappear from your launcher. You can only launch disabled apps in this application for now. In the future you can add shortcuts of disabled apps to your launcher.</string>
 
 </resources>

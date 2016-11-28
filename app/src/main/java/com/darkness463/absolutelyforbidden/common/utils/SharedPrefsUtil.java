@@ -8,6 +8,7 @@ public class SharedPrefsUtil {
 
     private final static String DEFAULT_PREF = "Setting";
     public final static String KEY_GET_SYS = "get_sys_app";
+    public final static String KEY_IS_FIRST = "is_first";
 
     public static void putValue(Context context, String key, int value) {
         SharedPreferences.Editor sp = context.getSharedPreferences(DEFAULT_PREF, Context.MODE_PRIVATE).edit();
@@ -44,6 +45,14 @@ public class SharedPrefsUtil {
 
     public static boolean getSys(Context context) {
         return getValue(context, KEY_GET_SYS, false);
+    }
+
+    public static boolean isFirst(Context context) {
+        return getValue(context, KEY_IS_FIRST, false);
+    }
+
+    public static void setFirst(Context context) {
+        putValue(context, KEY_IS_FIRST, true);
     }
 
 }

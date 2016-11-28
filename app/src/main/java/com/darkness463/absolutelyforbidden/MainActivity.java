@@ -1,6 +1,7 @@
 package com.darkness463.absolutelyforbidden;
 
 import android.app.AlertDialog;
+import android.app.Dialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -10,9 +11,11 @@ import android.support.design.widget.Snackbar;
 import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
 import android.support.v7.widget.Toolbar;
+import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.ViewGroup;
 
 import com.darkness463.absolutelyforbidden.activity.AboutActivity;
 import com.darkness463.absolutelyforbidden.activity.BaseActivity;
@@ -81,9 +84,31 @@ public class MainActivity extends BaseActivity {
             showNoRootDialog();
         } else {
             MyLog.i("got root access");
-            loadingApp(getSys);
+            boolean isFirst = SharedPrefsUtil.isFirst(this);
+            if (!isFirst) {
+                showGuideDialog();
+            } else {
+                loadingApp(getSys);
+            }
         }
         fabMove(FAB_MOVE_HOR, 0, 600, false, 600);
+    }
+
+    private void showGuideDialog() {
+        final Dialog dialog = new Dialog(this, R.style.guide_dialog);
+        View guide = LayoutInflater.from(this).inflate(R.layout.dialog_guide, null);
+        guide.findViewById(R.id.btn_guide_isee).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                dialog.dismiss();
+                SharedPrefsUtil.setFirst(mContext);
+                loadingApp(getSys);
+            }
+        });
+        ViewGroup.LayoutParams params = new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT,
+                ViewGroup.LayoutParams.MATCH_PARENT);
+        dialog.addContentView(guide, params);
+        dialog.show();
     }
 
     private void showNoRootDialog() {

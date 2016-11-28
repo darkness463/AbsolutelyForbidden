@@ -21,4 +21,9 @@
     <string name="text_app_disabled">已禁锢</string>
     <string name="text_app_enabled">已开启</string>
     <string name="text_app_not_disabled">未禁锢</string>
+    <string name="text_guide_disabled_side">已禁锢的应用显示在这边</string>
+    <string name="text_guide_enable_side">未禁锢的应用显示在这边,从这边挑选流氓app来禁锢吧！</string>
+    <string name="text_guide_isee">我知道了</string>
+    <string name="text_guide_notice">注意</string>
+    <string name="text_guide_notice_content">被禁锢的应用会从桌面消失，目前只能从本应用中打开被禁锢的应用，后续版本会增加添加被禁锢禁用快捷方式到桌面的功能。</string>
 </resources>
