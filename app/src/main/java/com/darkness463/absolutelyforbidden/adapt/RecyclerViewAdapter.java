@@ -80,12 +80,12 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
             holder.deleteApp.setImageResource(R.drawable.ic_forbidden);
         } else {
             if (appInfo.isEnable()) {
-                holder.tvAppStatus.setText("未禁锢");
+                holder.tvAppStatus.setText(R.string.text_app_not_disabled);
                 holder.tvAppStatus.setTextColor(
                         ContextCompat.getColor(mContext, R.color.red));
                 holder.deleteApp.setImageResource(R.drawable.ic_forbidden);
             } else {
-                holder.tvAppStatus.setText("已禁锢");
+                holder.tvAppStatus.setText(R.string.text_app_disabled);
                 holder.tvAppStatus.setTextColor(
                         ContextCompat.getColor(mContext, R.color.green));
                 holder.deleteApp.setImageResource(R.drawable.ic_delete);
@@ -136,7 +136,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
                     if (type == AppListFragment.TYPE_ENABLE) {
                         DbUtil.insert(appInfo.getPackageName());
                         ShellUtil.disableApp(mContext, appInfo.getPackageName());
-                        Toast.makeText(mContext, appInfo.getAppName()+"已禁锢", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(mContext, appInfo.getAppName()+mContext.getString(R.string.text_app_disabled), Toast.LENGTH_SHORT).show();
                         boolean getSys = SharedPrefsUtil.getSys(mContext);
                         new LoadAppTask(mContext, getSys).execute();
                     } else if (type == AppListFragment.TYPE_DISABLE) {
@@ -144,11 +144,11 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
                             ShellUtil.disableApp(mContext, appInfo.getPackageName());
                             appInfo.setEnable(false);
                             notifyDataSetChanged();
-                            Toast.makeText(mContext, appInfo.getAppName()+"已禁锢", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(mContext, appInfo.getAppName()+mContext.getString(R.string.text_app_disabled), Toast.LENGTH_SHORT).show();
                         } else {
                             DbUtil.delete(appInfo.getPackageName());
                             ShellUtil.enableApp(mContext, appInfo.getPackageName());
-                            Toast.makeText(mContext, appInfo.getAppName()+"已开启", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(mContext, appInfo.getAppName()+mContext.getString(R.string.text_app_enabled), Toast.LENGTH_SHORT).show();
                             boolean getSys = SharedPrefsUtil.getSys(mContext);
                             new LoadAppTask(mContext, getSys).execute();
                         }
@@ -243,7 +243,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
                 ShellUtil.disableApp(mContext, pkgs);
                 notifyDataSetChanged();
             } else {
-                Toast.makeText(mContext, "无未禁锢应用", Toast.LENGTH_SHORT).show();
+                Toast.makeText(mContext, R.string.text_no_enable_app, Toast.LENGTH_SHORT).show();
             }
         }
     }

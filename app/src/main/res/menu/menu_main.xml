@@ -6,20 +6,20 @@
     <item
         android:id="@+id/action_refresh"
         android:icon="@drawable/ic_refresh"
-        android:title="刷新"
+        android:title="@string/action_text_refresh"
         app:showAsAction="always"/>
 
     <item
         android:id="@+id/action_sysapp"
         android:checkable="true"
-        android:title="系统应用"/>
+        android:title="@string/action_text_sys_apps"/>
 
     <item
         android:id="@+id/action_all"
-        android:title="全部开启"/>
+        android:title="@string/action_text_enable_all"/>
 
     <item
         android:id="@+id/action_about"
-        android:title="关于"/>
+        android:title="@string/action_text_about"/>
 
 </menu>

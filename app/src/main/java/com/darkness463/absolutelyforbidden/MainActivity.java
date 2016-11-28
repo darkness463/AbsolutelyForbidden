@@ -123,8 +123,8 @@ public class MainActivity extends BaseActivity {
 
         mViewPager = (ViewPager) findViewById(R.id.viewpager);
         ViewPagerAdapter adapter = new ViewPagerAdapter(getSupportFragmentManager());
-        adapter.addFragment(AppListFragment.newInstance(AppListFragment.TYPE_DISABLE), "已禁止");
-        adapter.addFragment(AppListFragment.newInstance(AppListFragment.TYPE_ENABLE), "已启用");
+        adapter.addFragment(AppListFragment.newInstance(AppListFragment.TYPE_DISABLE), getText(R.string.text_disabled).toString());
+        adapter.addFragment(AppListFragment.newInstance(AppListFragment.TYPE_ENABLE), getText(R.string.text_enabled).toString());
         mViewPager.setAdapter(adapter);
         mViewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
             @Override
@@ -182,8 +182,8 @@ public class MainActivity extends BaseActivity {
             }
         });
         TabLayout tabLayout = (TabLayout) findViewById(R.id.sliding_tabs);
-        tabLayout.addTab(tabLayout.newTab().setText("已禁止"));
-        tabLayout.addTab(tabLayout.newTab().setText("已启用"));
+        tabLayout.addTab(tabLayout.newTab().setText(R.string.text_disabled));
+        tabLayout.addTab(tabLayout.newTab().setText(R.string.text_enabled));
         tabLayout.setupWithViewPager(mViewPager);
     }
 

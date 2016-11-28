@@ -11,4 +11,14 @@
     </string>
     <string name="about_version">版本: </string>
     <string name="view_on_github">点击访问github</string>
+    <string name="action_text_about">关于</string>
+    <string name="action_text_enable_all">全部开启</string>
+    <string name="action_text_sys_apps">系统应用</string>
+    <string name="action_text_refresh">刷新</string>
+    <string name="text_disabled">已禁止</string>
+    <string name="text_enabled">已启用</string>
+    <string name="text_no_enable_app">无未禁锢应用</string>
+    <string name="text_app_disabled">已禁锢</string>
+    <string name="text_app_enabled">已开启</string>
+    <string name="text_app_not_disabled">未禁锢</string>
 </resources>
